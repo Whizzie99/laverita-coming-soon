@@ -47,6 +47,7 @@ export const StyledNewsletter = styled.div`
       font-family: var(--font-stack);
       text-transform: capitalize;
       font-size: 1.2em;
+      color: var(--black);
     }
   }
 
