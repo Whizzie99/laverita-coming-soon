@@ -14,10 +14,8 @@ export const StyledHero = styled.div`
     text-align: center;
 
     @media screen and (min-width: 991px) {
-      > h1{
-        font-size: 3em;
-        width: 60%;
-      }
+      font-size: 3em;
+      width: 60%;
     }
   }
 
@@ -29,7 +27,7 @@ export const StyledHero = styled.div`
 
     @media screen and (min-width: 991px) {
       width: 50%;
-      font-size: 1.15em
+      font-size: 1.15em 
     }
   }
 `;
