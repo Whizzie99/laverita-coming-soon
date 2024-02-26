@@ -9,22 +9,34 @@ export const StyledHero = styled.div`
 
   > h1{
     font-family: var(--font-stack);
-    font-size: 3em;
-    width: 60%;
+    font-size: 2em;
+    width: 90%;
     text-align: center;
+
+    @media screen and (min-width: 991px) {
+      > h1{
+        font-size: 3em;
+        width: 60%;
+      }
+    }
   }
 
   > p {
-    width: 50%;
+    width: 80%;
     text-align: center;
     font-family: var(--font-stack);
     font-size: 1.1em;
+
+    @media screen and (min-width: 991px) {
+      width: 50%;
+      font-size: 1.15em
+    }
   }
 `;
 
 export const StyledArcImg = styled.div`
-  width: 30%;
-  height: 30em;
+  width: 80%;
+  height: 25em;
 
   img{
     height: 100%;
@@ -32,6 +44,11 @@ export const StyledArcImg = styled.div`
     object-fit: cover;
     border-top-left-radius: 25em;
     border-top-right-radius: 25em;
+  }
+
+  @media screen and (min-width: 991px) {
+    width: 30%;
+    height: 30em;
   }
 
 `;

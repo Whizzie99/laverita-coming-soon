@@ -1,5 +1,6 @@
 import Hero from "../../components/Hero/Hero";
 import Newsletter from "../../components/Newsletter/Newsletter";
+import Footer from "../../components/Footer/Footer";
 import { StyledWrapper } from "./styles";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <StyledWrapper>
       <Hero/>
       <Newsletter/>
+      <Footer/>
     </StyledWrapper>
   );
 }

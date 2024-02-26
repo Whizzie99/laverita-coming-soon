@@ -8,7 +8,7 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StyledNewsletter = styled.div`
-  width: 50%;
+  width: 80%;
 
   form{
     display: flex;
@@ -22,10 +22,11 @@ export const StyledNewsletter = styled.div`
       background: transparent;
       border: 0;
       border-bottom: 0.05em solid var(--black);
-      width: 50%;
+      width: 100%;
       font-family: var(--font-stack);
       font-size: 1em;
       color: var(--black);
+      text-align: center;
 
       &::placeholder{
         font-family: var(--font-stack);
@@ -46,6 +47,16 @@ export const StyledNewsletter = styled.div`
       font-family: var(--font-stack);
       text-transform: capitalize;
       font-size: 1.2em;
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    width: 50%;
+
+    form{
+      input{
+        width: 50%;
+      }
     }
   }
 `;
