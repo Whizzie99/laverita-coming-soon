@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home/Home';
 
@@ -19,6 +20,15 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
+      <Toaster
+        toastOptions={{
+          style: {
+            fontFamily: "Cormorant",
+            fontSize: "0.9em",
+            textAlign: "center",
+          },
+        }}
+      />
     </>
   );
 }

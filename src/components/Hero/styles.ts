@@ -5,9 +5,20 @@ export const StyledHero = styled.div`
   flex-direction: column;
   gap: 2em;
   align-items: center;
+  justify-content: center;
 
   > h1{
     font-family: var(--font-stack);
+    font-size: 3em;
+    width: 60%;
+    text-align: center;
+  }
+
+  > p {
+    width: 50%;
+    text-align: center;
+    font-family: var(--font-stack);
+    font-size: 1.1em;
   }
 `;
 
