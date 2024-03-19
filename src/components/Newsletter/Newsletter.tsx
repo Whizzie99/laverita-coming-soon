@@ -1,5 +1,6 @@
 import { useState } from "react";
 import jsonp from 'jsonp';
+import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import { StyledWrapper, StyledNewsletter } from "./styles";
 
@@ -10,6 +11,19 @@ const Newsletter = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true)
+
+    const templateParams = {
+      email: email
+    }
+
+    const userParams = {
+      from_name: "Laverita Hairs",
+      to_email: email,
+      message: `
+        Welcome to the LaVerita family! 🌟 You're officially on our exclusive waitlist. Get ready to embark on a journey of luxury and style. Stay tuned for updates and exciting offers coming your way.
+      `,
+      reply_to: "waitlist@laveritahair.com",
+    }
 
     const mailchimpUrl = `${process.env.REACT_APP_MAILCHIMP_API_URL}?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
     const data = {
@@ -37,8 +51,41 @@ const Newsletter = () => {
         setEmail("");
         console.log(res.msg);
         console.log(res);
+
+        emailjs.send(
+          `${process.env.REACT_APP_EMAILJS_SERVICEID}`,
+          `${process.env.REACT_APP_EMAILJS_TEMPLATEID}`,
+          templateParams,
+          `${process.env.REACT_APP_EMAILJS_PUBLIC_KEY}`,
+        )
+        .then(
+          (res => {
+            // console.log('email sent to admin');
+          })
+        ).catch(
+          (err => {
+            // console.log('something went wrong', err);
+          })
+        )
+
+        emailjs.send(
+          `${process.env.REACT_APP_EMAILJS_SERVICEID}`,
+          `${process.env.REACT_APP_EMAILJS_TEMPLATE2ID}`,
+          userParams,
+          `${process.env.REACT_APP_EMAILJS_PUBLIC_KEY}`,
+        )
+        .then(
+          (res => {
+            // console.log('email sent to user');
+          })
+        ).catch(
+          (err => {
+            // console.log('something went wrong', err);
+          })
+        )
       }
     });
+    
   }; 
 
   return (
