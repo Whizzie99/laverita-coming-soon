@@ -17,10 +17,10 @@ const Newsletter = () => {
     }
 
     const userParams = {
-      from_name: "Laverita Hairs",
+      from_name: "La’Verita Hairs",
       to_email: email,
       message: `
-        Welcome to the LaVerita family! 🌟 You're officially on our exclusive waitlist. Get ready to embark on a journey of luxury and style. Stay tuned for updates and exciting offers coming your way.
+        Welcome to the La’Verita family! 🌟 You're officially on our exclusive waitlist. Get ready to embark on a journey of luxury and style. Stay tuned for updates and exciting offers coming your way.
       `,
       reply_to: "waitlist@laveritahair.com",
     }
