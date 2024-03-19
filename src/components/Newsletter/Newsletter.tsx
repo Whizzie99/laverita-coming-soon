@@ -38,19 +38,19 @@ const Newsletter = () => {
       if (err) {
         toast.error("Error adding subscriber");
         setLoading(false);
-        console.log("something went wrong");
-        console.log(err);
+        // console.log("something went wrong");
+        // console.log(err);
       } else if (res.result === "error") {
         toast.error(res.msg);
         setLoading(false);
-        console.log(res);
-        console.log(res.msg);
+        // console.log(res);
+        // console.log(res.msg);
       } else if (res.result === "success") {
         toast.success(res.msg);
         setLoading(false);
         setEmail("");
-        console.log(res.msg);
-        console.log(res);
+        // console.log(res.msg);
+        // console.log(res);
 
         emailjs.send(
           `${process.env.REACT_APP_EMAILJS_SERVICEID}`,
